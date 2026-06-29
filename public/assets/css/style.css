@@ -1,0 +1,361 @@
+/* =========================================================
+   Tema "Rental Kendaraan" - dibangun di atas Bootstrap 5
+   Palet: navy gelap (sidebar) + amber (aksen/CTA) + netral terang
+   ========================================================= */
+
+:root {
+  --rk-navy-900: #101a30;
+  --rk-navy-800: #16223d;
+  --rk-navy-700: #1f2f52;
+  --rk-amber-500: #f2a93b;
+  --rk-amber-600: #d9911f;
+  --rk-bg: #f5f6fa;
+  --rk-card: #ffffff;
+  --rk-text: #1c2333;
+  --rk-text-muted: #6b7280;
+  --rk-border: #e7e9f0;
+  --rk-radius: 14px;
+  --rk-shadow: 0 1px 2px rgba(16, 26, 48, 0.04), 0 8px 24px rgba(16, 26, 48, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--rk-bg);
+  color: var(--rk-text);
+}
+
+h1, h2, h3, h4, h5, h6, .rk-display {
+  font-family: 'Sora', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ---------- Layout shell ---------- */
+.rk-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.rk-sidebar {
+  width: 264px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, var(--rk-navy-900), var(--rk-navy-800));
+  color: #cdd5e6;
+  padding: 1.5rem 1.1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.rk-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  padding: 0 0.4rem;
+}
+
+.rk-brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--rk-amber-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--rk-navy-900);
+  font-family: 'Sora', sans-serif;
+  flex-shrink: 0;
+}
+
+.rk-brand-text {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.15;
+}
+
+.rk-brand-text small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: #8b96b3;
+}
+
+.rk-nav-section {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7aa0;
+  margin: 1.3rem 0.6rem 0.5rem;
+}
+
+.rk-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: 10px;
+  color: #cdd5e6;
+  font-size: 0.92rem;
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.rk-nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.rk-nav-link.active {
+  background: var(--rk-amber-500);
+  color: var(--rk-navy-900);
+  font-weight: 700;
+}
+
+.rk-nav-icon {
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ---------- Main area ---------- */
+.rk-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.rk-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.75rem;
+  background: var(--rk-card);
+  border-bottom: 1px solid var(--rk-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.rk-topbar-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.rk-user-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+}
+
+.rk-user-chip .rk-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--rk-navy-700);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.rk-content {
+  padding: 1.75rem;
+}
+
+/* ---------- Cards / Stat tiles ---------- */
+.rk-card {
+  background: var(--rk-card);
+  border: 1px solid var(--rk-border);
+  border-radius: var(--rk-radius);
+  box-shadow: var(--rk-shadow);
+}
+
+.rk-stat {
+  padding: 1.25rem 1.4rem;
+  border-radius: var(--rk-radius);
+  background: var(--rk-card);
+  border: 1px solid var(--rk-border);
+  box-shadow: var(--rk-shadow);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.rk-stat-value {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.rk-stat-label {
+  font-size: 0.82rem;
+  color: var(--rk-text-muted);
+  margin-top: 0.2rem;
+}
+
+.rk-stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.rk-icon-amber { background: rgba(242, 169, 59, 0.16); color: var(--rk-amber-600); }
+.rk-icon-navy  { background: rgba(16, 26, 48, 0.08); color: var(--rk-navy-800); }
+.rk-icon-green { background: rgba(34, 169, 99, 0.14); color: #1c8a52; }
+.rk-icon-red   { background: rgba(220, 70, 70, 0.12); color: #c0392b; }
+
+/* ---------- Buttons ---------- */
+.btn-rk-primary {
+  background-color: var(--rk-navy-800);
+  border-color: var(--rk-navy-800);
+  color: #fff;
+}
+.btn-rk-primary:hover {
+  background-color: var(--rk-navy-900);
+  border-color: var(--rk-navy-900);
+  color: #fff;
+}
+
+.btn-rk-amber {
+  background-color: var(--rk-amber-500);
+  border-color: var(--rk-amber-500);
+  color: var(--rk-navy-900);
+  font-weight: 600;
+}
+.btn-rk-amber:hover {
+  background-color: var(--rk-amber-600);
+  border-color: var(--rk-amber-600);
+  color: var(--rk-navy-900);
+}
+
+/* ---------- Tables ---------- */
+.rk-table thead th {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--rk-text-muted);
+  border-bottom: 1px solid var(--rk-border);
+  font-weight: 700;
+  background: #fafbfd;
+}
+
+.rk-table td, .rk-table th {
+  vertical-align: middle;
+  padding: 0.85rem 1rem;
+}
+
+.rk-table tbody tr {
+  border-bottom: 1px solid var(--rk-border);
+}
+
+.rk-table tbody tr:hover {
+  background: #fafbfd;
+}
+
+/* ---------- Vehicle photo thumbnails ---------- */
+.rk-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #eef0f5;
+}
+
+.rk-thumb-lg {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: var(--rk-radius);
+  background: #eef0f5;
+}
+
+.rk-thumb-placeholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: #eef0f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9aa3b8;
+  font-size: 1.1rem;
+}
+
+/* ---------- Login page ---------- */
+.rk-login-wrap {
+  min-height: 100vh;
+  display: flex;
+}
+
+.rk-login-side {
+  flex: 1;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(242, 169, 59, 0.18), transparent 45%),
+    linear-gradient(160deg, var(--rk-navy-900), var(--rk-navy-700));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.rk-login-form-wrap {
+  width: 440px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--rk-card);
+}
+
+@media (max-width: 860px) {
+  .rk-login-side { display: none; }
+  .rk-login-form-wrap { width: 100%; }
+}
+
+/* ---------- Misc ---------- */
+.rk-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--rk-text-muted);
+}
+
+.rk-pagination .page-link {
+  border-radius: 8px;
+  margin: 0 2px;
+  border: 1px solid var(--rk-border);
+  color: var(--rk-text);
+}
+
+.rk-pagination .page-item.active .page-link {
+  background-color: var(--rk-navy-800);
+  border-color: var(--rk-navy-800);
+}
+
+@media print {
+  .rk-no-print { display: none !important; }
+}
